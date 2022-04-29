@@ -38,8 +38,8 @@ export const Section = styled.div`
   padding:1rem;
 `;
 export const Dots = styled.span`
-color:white;
-
+  color:white;
+  font-size: 20px;
 `;
 export const ButtonsContainer = styled.div`
   display: flex;
@@ -50,11 +50,15 @@ export const ButtonsContainer = styled.div`
 export const Button = styled.button`
   background-color:#402DD6;
   padding: 6px;
-	border: none;
+	border: 3px solid #402DD6;
 	font-size: 14px;
-	background: #476ade;
 	height: 40px;
 	color: #fff;
 	border-radius: 10px;
   font-family: 'Inter', sans-serif;
+  transition: 0.4s;
+  :hover{
+    background-color:#fff;
+    color: #402DD6;
+  }
 `;

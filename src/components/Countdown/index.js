@@ -25,12 +25,7 @@ const Countdown = ({}) => {
   const [intervalId, setIntervalId] = useState(null)
   const [active, setActive] = useState(true)
   
-  // useEffect(() => {
-  //   setTimerDays(0)
-  //   setTimerHours(0)
-  //   setTimerMinutes(0)
-  //   setTimerSeconds(0)
-  // },[])
+
   
   const startTimer=()=>{
     const countDownDate= new Date("May 3,2022").getTime()
@@ -42,10 +37,10 @@ const Countdown = ({}) => {
 
       let distance= countDownDate - now
       let days= Math.floor(distance /(24*60*60*1000))
-      let hours= Math.floor((distance % (24*60*60*1000)) /(1000*60*60))
-      let minutes =Math.floor((distance % (60*60*1000)) /(1000*60))
-
+      let hours= Math.floor((distance % (24*60*60*1000)) / (1000*60*60))
+      let minutes = Math.floor((distance % (60*60*1000)) / (1000*60))
       let seconds = Math.floor((distance % (60*1000)) / (1000))
+      
         setTimerDays(days)
         setTimerHours(hours)
         setTimerMinutes(minutes)
