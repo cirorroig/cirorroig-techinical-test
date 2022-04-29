@@ -36,10 +36,11 @@ const reducer = (state=initialState(),action ={})=>{
 }
 
 const Countup = ({}) => {
-  const [intervalId, setIntervalId] = useState(null)
-  const [active, setActive] = useState(false)
+  const [intervalId, setIntervalId] = useState(null) // State to save the interval Id
+  const [active, setActive] = useState(false) // Boolean to start or stop the counter
   const [state,dispatch]= useReducer(reducer,reducer())
 
+  // useEffect to start the counter interval
   useEffect(() => {
         if(active){
           setIntervalId(setInterval(() => {
@@ -47,12 +48,12 @@ const Countup = ({}) => {
           }, 1000))
         }
         }, [active]);
+  
   const startTimer=()=>{
     setActive(true)
   }
   const stopTimer=()=>{
     setActive(false)
-    console.log(active);
     clearInterval(intervalId)
   }
 
@@ -88,8 +89,8 @@ const Countup = ({}) => {
         </Button>
       </ButtonsContainer>
     <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
-  </style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+    </style>
     </Container>
   );
 };
