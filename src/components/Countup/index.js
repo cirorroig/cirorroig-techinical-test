@@ -27,7 +27,7 @@ const reducer = (state=initialState(),action ={})=>{
      if(state.countMin==59){
        return {...state,countHr:state.countHr+1,countMin:0}
      }
-     if (state.countHr==23) {
+     if (state.countHr==24) {
       return {...state,countDay:state.countDay+1,countHr:0}
      }
     return {...state, countSec:state.countSec+1}
