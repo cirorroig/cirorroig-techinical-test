@@ -114,6 +114,15 @@ Countup.propTypes = {
 };
 Countup.defaultProps = {
   time: [],
+  backgroundColor:"#2C2C2C",
+  borderColor:"#402DD6",
+  numberTextColor:"#fff",
+  datesTextColor:"#fff",
+  buttonBackgroundColor:"#402DD6",
+  buttonBorderColor:"#402DD6",
+  buttonTextColor:"#fff",
+  buttonHoverTextColor:"#402DD6",
+  buttonHoverBackgroundColor:"#fff",
 };
 
 export default Countup;

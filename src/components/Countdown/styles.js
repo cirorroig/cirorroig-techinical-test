@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 export const Time = styled.p`
-  color:${props => props.color?props.color:"#fff"};
+  color:${props => props.color};
   font-size: 32px;
   margin: 0;
 `;
 export const Name = styled.small`
-  color:${props => props.color?props.color:"#fff"};
+  color:${props => props.color};
   font-size: 16px;
 `;
 export const Title = styled.small`
-  color:${props => props.color?props.color:"#fff"};
+  color:${props => props.color};
   font-size: 16px;
 `;
 export const Container = styled.div`
@@ -19,10 +19,10 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 160px;
-  border: 5px solid ${props => props.borderColor?props.borderColor:"#402DD6"};
+  border: 5px solid ${props => props.borderColor};
   border-radius: 25px;
   padding:15px;
-  background-color:${props => props.backgroundColor? props.backgroundColor:"#2C2C2C"};
+  background-color:${props => props.backgroundColor};
   font-weight: 600;
   font-size: 5px;
   font-family: 'Inter', sans-serif;
@@ -33,7 +33,7 @@ export const SectionsContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 160px;
-  color:${props => props.timerTextColor?props.timerTextColor:"#fff"};
+  color:${props => props.timerTextColor};
 `;
 export const Section = styled.div`
   display: flex;
@@ -55,18 +55,18 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color:${props => props.backgroundcolor?props.backgroundcolor:"#402DD6"};
+  background-color:${props => props.backgroundcolor};
   padding: 6px;
 	font-size: 14px;
-  border: 3px solid ${props => props.borderColor?props.borderColor:"#402DD6"};
+  border: 3px solid ${props => props.borderColor};
 	height: 40px;
-	color: ${props => props.color?props.color:"#fff"};
+	color: ${props => props.color};
 	border-radius: 10px;
   transition:0.4s;
   font-family: 'Inter', sans-serif;
   :hover{
-    background-color:${props => props.hoverBackground?props.hoverBackground:"#fff"};
-    color: ${props => props.hoverColor?props.hoverColor:"#402DD6"};
+    background-color:${props => props.hoverBackground};
+    color: ${props => props.hoverColor};
     cursor:pointer;
   }
 `;

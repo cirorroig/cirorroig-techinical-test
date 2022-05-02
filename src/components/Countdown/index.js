@@ -29,7 +29,7 @@ const Countdown = (props) => {
 
   
   const startTimer=()=>{
-    const countDownDate= new Date("May 10,2022").getTime()
+    const countDownDate= new Date(`${props.startingDate}`+","+`${props.startingYear}`).getTime()
     setActive(!active)
     if(active){
       setIntervalId(setInterval(()=>{
@@ -58,7 +58,7 @@ const Countdown = (props) => {
     <Container borderColor={props.borderColor}
     backgroundColor={props.backgroundColor}
     >
-      <Title color={props.titleColor}>Countdown from today to May 10 2022</Title>
+      <Title color={props.titleColor}>Countdown from today to {props.startingDate} {props.startingYear}</Title>
       <SectionsContainer>  
       <Section>
         <Time color={props.numberTextColor}>{timerDays}</Time>
@@ -112,6 +112,18 @@ Countdown.propTypes = {
 };
 Countdown.defaultProps = {
   time: [],
+  startingDate:"May 10",
+  startingYear:"2030",
+  backgroundColor:"#2C2C2C",
+  titleColor:"#fff",
+  borderColor:"#402DD6",
+  numberTextColor:"#fff",
+  datesTextColor:"#fff",
+  buttonBackgroundColor:"#402DD6",
+  buttonBorderColor:"#402DD6",
+  buttonTextColor:"#fff",
+  buttonHoverTextColor:"#402DD6",
+  buttonHoverBackgroundColor:"#fff",
 };
 
 export default Countdown;

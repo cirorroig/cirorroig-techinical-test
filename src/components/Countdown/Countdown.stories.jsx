@@ -6,6 +6,8 @@ export default {
   title: 'Example/Countdown',
   component: Countdown,
   argTypes: {
+    startingDate:{control: "text"},
+    startingYear:{control: "text"},
     backgroundColor: { control: 'color' },
     titleColor:{ control: 'color' },
     borderColor:{control: 'color' },
