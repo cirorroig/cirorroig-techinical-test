@@ -113,7 +113,7 @@ Countdown.propTypes = {
 Countdown.defaultProps = {
   time: [],
   startingDate:"May 10",
-  startingYear:"2030",
+  startingYear:"2022",
   backgroundColor:"#2C2C2C",
   titleColor:"#fff",
   borderColor:"#402DD6",
