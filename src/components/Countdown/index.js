@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { 
   Time,
   Container,
+  Title,
   Section,
   Name,
   Dots,
@@ -14,7 +15,7 @@ import {
 
 
 
-const Countdown = ({}) => {
+const Countdown = (props) => {
 
 
 
@@ -28,7 +29,7 @@ const Countdown = ({}) => {
 
   
   const startTimer=()=>{
-    const countDownDate= new Date("May 3,2022").getTime()
+    const countDownDate= new Date("May 10,2022").getTime()
     setActive(!active)
     if(active){
       setIntervalId(setInterval(()=>{
@@ -54,40 +55,54 @@ const Countdown = ({}) => {
   }
 
   return (
-    <Container>
-      <Name>Countdown from today to May 3 2022</Name>
-      <SectionsContainer>
+    <Container borderColor={props.borderColor}
+    backgroundColor={props.backgroundColor}
+    >
+      <Title color={props.titleColor}>Countdown from today to May 10 2022</Title>
+      <SectionsContainer>  
       <Section>
-        <Time>{timerDays}</Time>
-        <Name>Days</Name>
+        <Time color={props.numberTextColor}>{timerDays}</Time>
+        <Name color={props.datesTextColor}>Days</Name>
       </Section>
       <Dots>:</Dots>
       <Section>
-        <Time>{timerHours}</Time>
-        <Name>Hours</Name>
+        <Time color={props.numberTextColor}>{timerHours}</Time>
+        <Name color={props.datesTextColor}>Hours</Name>
       </Section>
       <Dots>:</Dots>
       <Section>
-        <Time>{timerMinutes}</Time>
-        <Name>Minutes</Name>
+        <Time color={props.numberTextColor}>{timerMinutes}</Time>
+        <Name color={props.datesTextColor}>Minutes</Name>
       </Section>
       <Dots>:</Dots>
       <Section>
-        <Time>{timerSeconds}</Time>
-        <Name>Seconds</Name>
+        <Time color={props.numberTextColor}>{timerSeconds}</Time>
+        <Name color={props.datesTextColor}>Seconds</Name>
       </Section>
       </SectionsContainer>
       <ButtonsContainer>
-        <Button onClick={startTimer}>
-          Start Countdown
+        <Button backgroundcolor={props.buttonBackgroundColor}
+         borderColor={props.buttonBorderColor} 
+         color={props.buttonTextColor}
+         hoverColor={props.buttonHoverTextColor}
+         hoverBackground={props.buttonHoverBackgroundColor} 
+         onClick={startTimer}
+        >
+          Start Count Up
         </Button>
-        <Button onClick={stopTimer}>
-          Stop Countdown
+        <Button backgroundcolor={props.buttonBackgroundColor}
+         borderColor={props.buttonBorderColor} 
+         color={props.buttonTextColor}
+         hoverColor={props.buttonHoverTextColor}
+         hoverBackground={props.buttonHoverBackgroundColor} 
+         onClick={stopTimer}
+         >
+          Stop Count Up
         </Button>
       </ButtonsContainer>
     <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
-  </style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+    </style>
     </Container>
   );
 };

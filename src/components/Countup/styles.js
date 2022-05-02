@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Time = styled.p`
-  color: white;
+  color:${props => props.color?props.color:"#fff"};
   font-size: 32px;
   margin: 0;
 `;
 export const Name = styled.small`
-  color: white;
+  color:${props => props.color?props.color:"#fff"};
   font-size: 16px;
 `;
 export const Container = styled.div`
@@ -15,10 +15,10 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 160px;
-  border: 5px solid #402DD6;
+  border: 5px solid ${props => props.borderColor?props.borderColor:"#402DD6"};
   border-radius: 25px;
   padding:15px;
-  background-color:#2C2C2C;
+  background-color:${props => props.backgroundColor? props.backgroundColor:"#2C2C2C"};
   font-weight: 600;
   font-size: 5px;
   font-family: 'Inter', sans-serif;
@@ -29,6 +29,7 @@ export const SectionsContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 160px;
+  color:${props => props.timerTextColor?props.timerTextColor:"#fff"};
 `;
 export const Section = styled.div`
   display: flex;
@@ -36,6 +37,7 @@ export const Section = styled.div`
   justify-content: center;
   align-items: center;
   padding:1rem;
+  
 `;
 export const Dots = styled.span`
   color:white;
@@ -49,19 +51,18 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color:#402DD6;
+  background-color:${props => props.backgroundcolor?props.backgroundcolor:"#402DD6"};
   padding: 6px;
-	border: none;
 	font-size: 14px;
-  border: 3px solid #402DD6;
+  border: 3px solid ${props => props.borderColor?props.borderColor:"#402DD6"};
 	height: 40px;
-	color: #fff;
+	color: ${props => props.color?props.color:"#fff"};
 	border-radius: 10px;
   transition:0.4s;
   font-family: 'Inter', sans-serif;
   :hover{
-    background-color:#fff;
-    color: #402DD6;
+    background-color:${props => props.hoverBackground?props.hoverBackground:"#fff"};
+    color: ${props => props.hoverColor?props.hoverColor:"#402DD6"};
     cursor:pointer;
   }
 `;

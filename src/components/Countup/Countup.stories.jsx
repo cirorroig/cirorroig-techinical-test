@@ -7,6 +7,14 @@ export default {
   component: Countup,
   argTypes: {
     backgroundColor: { control: 'color' },
+    borderColor:{control: 'color' },
+    numberTextColor:{control: 'color' },
+    datesTextColor:{control: 'color'},
+    buttonBackgroundColor:{control: 'color'},
+    buttonBorderColor:{control: 'color'},
+    buttonTextColor:{control: 'color'},
+    buttonHoverTextColor:{control: 'color'},
+    buttonHoverBackgroundColor:{control: 'color'},
   },
 };
 

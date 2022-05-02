@@ -24,10 +24,10 @@ const reducer = (state=initialState(),action ={})=>{
     if(state.countSec==59){
       return{...state,countMin:state.countMin+1,countSec:0}
     }
-     if(state.countMin==59){
+     if(state.countMin==60){
        return {...state,countHr:state.countHr+1,countMin:0}
      }
-     if (state.countHr==23) {
+     if (state.countHr==24) {
       return {...state,countDay:state.countDay+1,countHr:0}
      }
     return {...state, countSec:state.countSec+1}
@@ -35,7 +35,7 @@ const reducer = (state=initialState(),action ={})=>{
   return state
 }
 
-const Countup = ({}) => {
+const Countup = (props) => {
   const [intervalId, setIntervalId] = useState(null) // State to save the interval Id
   const [active, setActive] = useState(false) // Boolean to start or stop the counter
   const [state,dispatch]= useReducer(reducer,reducer())
@@ -58,33 +58,47 @@ const Countup = ({}) => {
   }
 
   return (
-    <Container>
-      <SectionsContainer>
+    <Container borderColor={props.borderColor}
+    backgroundColor={props.backgroundColor}
+    >
+      <SectionsContainer >
       <Section>
-        <Time>{state.countDay}</Time>
-        <Name>Days</Name>
+        <Time color={props.numberTextColor}>{state.countDay}</Time>
+        <Name color={props.datesTextColor}>Days</Name>
       </Section>
       <Dots>:</Dots>
       <Section>
-        <Time>{state.countHr}</Time>
-        <Name>Hours</Name>
+        <Time color={props.numberTextColor}>{state.countHr}</Time>
+        <Name color={props.datesTextColor}>Hours</Name>
       </Section>
       <Dots>:</Dots>
       <Section>
-        <Time>{state.countMin}</Time>
-        <Name>Minutes</Name>
+        <Time color={props.numberTextColor}>{state.countMin}</Time>
+        <Name color={props.datesTextColor}>Minutes</Name>
       </Section>
       <Dots>:</Dots>
       <Section>
-        <Time>{state.countSec}</Time>
-        <Name>Seconds</Name>
+        <Time color={props.numberTextColor}>{state.countSec}</Time>
+        <Name color={props.datesTextColor}>Seconds</Name>
       </Section>
       </SectionsContainer>
       <ButtonsContainer>
-        <Button onClick={startTimer}>
+        <Button backgroundcolor={props.buttonBackgroundColor}
+         borderColor={props.buttonBorderColor} 
+         color={props.buttonTextColor}
+         hoverColor={props.buttonHoverTextColor}
+         hoverBackground={props.buttonHoverBackgroundColor}
+         onClick={startTimer}
+        >
           Start Count Up
         </Button>
-        <Button onClick={stopTimer}>
+        <Button backgroundcolor={props.buttonBackgroundColor}
+         borderColor={props.buttonBorderColor} 
+         color={props.buttonTextColor}
+         hoverColor={props.buttonHoverTextColor}
+         hoverBackground={props.buttonHoverBackgroundColor} 
+         onClick={stopTimer}
+         >
           Stop Count Up
         </Button>
       </ButtonsContainer>
